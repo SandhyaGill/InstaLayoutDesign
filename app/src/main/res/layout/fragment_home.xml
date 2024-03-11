@@ -30,11 +30,41 @@
             android:layout_weight="1"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-
-
+            android:layout_width="50sp"
+            android:layout_height="70sp"
+            android:src="@drawable/three_dots" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:src="@drawable/instapost"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="@dimen/margin_10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/heart"
+            android:layout_marginLeft="@dimen/margin_10dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/chat"
+            android:layout_marginLeft="@dimen/margin_10dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/send"
+            android:layout_marginLeft="@dimen/margin_10dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/save"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            />
     </LinearLayout>
 
 
