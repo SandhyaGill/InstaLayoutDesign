@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Like"
+        android:id="@+id/menuLike"
+        android:icon="@drawable/heart"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="Msg"
+        android:id="@+id/menuMsg"
+        android:icon="@drawable/messenger"
+        app:showAsAction="ifRoom"/>
+</menu>

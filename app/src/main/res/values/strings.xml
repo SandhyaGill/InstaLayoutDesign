@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">InstaLayoutDesign</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="person_name">PersonId</string>
+    <string name="person_id">Person Id</string>
+</resources>
