@@ -1,11 +1,18 @@
 package com.sandhyagill.instalayoutdesign.fragments
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sandhyagill.instalayoutdesign.R
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerPostAdapter
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerStoriesAdapter
+import com.sandhyagill.instalayoutdesign.databinding.FragmentHomeBinding
+import com.sandhyagill.instalayoutdesign.modules.Posts
+import com.sandhyagill.instalayoutdesign.modules.Stories
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +28,7 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: FragmentHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +43,30 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var storieslist: MutableList<Stories> = mutableListOf()
+        storieslist.add(Stories("Komal",R.drawable.person1))
+        storieslist.add(Stories("Suman", R.drawable.person2))
+        storieslist.add(Stories("Tanu", R.drawable.person3))
+        storieslist.add(Stories("Drishti", R.drawable.person4))
+        storieslist.add(Stories("Lovi",R.drawable.person5))
+        binding.rvStories.adapter = RecyclerStoriesAdapter(storieslist)
+        binding.rvStories.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        var postlist: MutableList<Posts> = mutableListOf()
+        postlist.add(Posts("Komal",R.drawable.person1,R.drawable.person1))
+        postlist.add(Posts("Suman", R.drawable.person2,R.drawable.person2))
+        postlist.add(Posts("Tanu", R.drawable.person3,R.drawable.person3))
+        postlist.add(Posts("Drishti", R.drawable.person4,R.drawable.person4))
+        postlist.add(Posts("Lovi",R.drawable.person5,R.drawable.person5))
+        binding.rvPosts.adapter = RecyclerPostAdapter(postlist)
+        binding.rvPosts.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
     }
 
     companion object {

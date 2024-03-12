@@ -3,9 +3,22 @@ package com.sandhyagill.instalayoutdesign.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.sandhyagill.instalayoutdesign.R
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerHighLightsAdapter
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerPostAdapter
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerProfilePostAdapter
+import com.sandhyagill.instalayoutdesign.adapters.RecyclerStoriesAdapter
+import com.sandhyagill.instalayoutdesign.databinding.FragmentAccountBinding
+import com.sandhyagill.instalayoutdesign.databinding.FragmentHomeBinding
+import com.sandhyagill.instalayoutdesign.modules.HighLights
+import com.sandhyagill.instalayoutdesign.modules.Posts
+import com.sandhyagill.instalayoutdesign.modules.ProfilePost
+import com.sandhyagill.instalayoutdesign.modules.Stories
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +34,7 @@ class AccountFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var binding: FragmentAccountBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +49,33 @@ class AccountFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false)
+        binding = FragmentAccountBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        var highlightslist: MutableList<HighLights> = mutableListOf()
+        highlightslist.add(HighLights("Komal",R.drawable.person1))
+        highlightslist.add(HighLights("Suman", R.drawable.person2))
+        highlightslist.add(HighLights("Tanu", R.drawable.person3))
+        highlightslist.add(HighLights("Drishti", R.drawable.person4))
+        highlightslist.add(HighLights("Lovi",R.drawable.person5))
+        binding.rvHighLights.adapter = RecyclerHighLightsAdapter(highlightslist)
+        binding.rvHighLights.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        var profilepostlist: MutableList<ProfilePost> = mutableListOf()
+        profilepostlist.add(ProfilePost(R.drawable.person1))
+        profilepostlist.add(ProfilePost(R.drawable.person2))
+        profilepostlist.add(ProfilePost(R.drawable.person3))
+        profilepostlist.add(ProfilePost(R.drawable.person4))
+        profilepostlist.add(ProfilePost(R.drawable.person5))
+
+        val layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.rvPosts.layoutManager = layoutManager
+        val postadapter = RecyclerProfilePostAdapter(profilepostlist)
+        binding.rvPosts.adapter = postadapter
     }
 
     companion object {

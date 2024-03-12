@@ -1,9 +1,10 @@
 package com.sandhyagill.instalayoutdesign
 
-import android.os.Build.VERSION_CODES.R
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import androidx.core.graphics.drawable.toDrawable
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -21,17 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var storieslist: MutableList<Stories> = mutableListOf()
-        storieslist.add(Stories("Komal"))
-        storieslist.add(Stories("Suman"))
-        storieslist.add(Stories("Tanu"))
-        storieslist.add(Stories("Drishti"))
-        storieslist.add(Stories("Lovi"))
-        binding.recyclerView.adapter = RecyclerStoriesAdapter(storieslist)
-        binding.recyclerView.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-    controller = findNavController(R.id.fragment)
+        controller = findNavController(R.id.fragment)
 
         appBarConfiguration =
             AppBarConfiguration(setOf(R.id.homeFragment, R.id.searchFragment, R.id.addFragment, R.id.reelsFragment, R.id.accountFragment))

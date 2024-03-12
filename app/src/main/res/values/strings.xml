@@ -4,4 +4,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="person_name">PersonId</string>
     <string name="person_id">Person Id</string>
+    <string name="instagram">Instagram</string>
+    <string name="posts">posts</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="bio">Bio</string>
+    <string name="name">Name</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="share_profile">Share Profile</string>
 </resources>
