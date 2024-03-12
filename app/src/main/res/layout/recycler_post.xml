@@ -16,6 +16,7 @@
                 android:layout_width="65dp"
                 android:layout_height="65dp"
                 android:padding="5dp"
+                android:scaleType="fitXY"
                 android:src="@drawable/girl"
                 android:layout_marginLeft="@dimen/margin_10dp"
                 app:shapeAppearanceOverlay="@style/Circle" />
@@ -59,6 +60,11 @@
                 android:layout_height="30dp"
                 android:src="@drawable/send"
                 android:layout_marginLeft="@dimen/margin_10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="200"
+                />
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -66,8 +72,5 @@
                 android:layout_marginLeft="@dimen/margin_10dp"
                 />
         </LinearLayout>
-
-
-
     </LinearLayout>
 </layout>
